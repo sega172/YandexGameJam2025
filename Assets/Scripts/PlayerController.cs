@@ -30,6 +30,9 @@ public class PlayerController : Controller
             Action();
         if (Input.GetKeyDown(ShootKey))
             Shoot();
+
+        if(MoveVector.x > 0) transform.localScale = new Vector3(-1, 1,1);
+        if(MoveVector.x < 0) transform.localScale = new Vector3(1, 1,1);
     }
 
     void Move(Vector2 direction)
